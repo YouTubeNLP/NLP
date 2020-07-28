@@ -12,10 +12,10 @@ data_text = data[['headline_text']]
 data_text['index'] = data_text.index
 documents = data_text
 
-lemmatizer = WordNetLemmatizer()
-stemmer = SnowballStemmer("english")
 
 def lemmatize_stemming(text):
+    lemmatizer = WordNetLemmatizer()
+    stemmer = SnowballStemmer("english")
     token = lemmatizer.lemmatize(text, pos='v')
     stem_token = stemmer.stem(token)
     return stem_token
@@ -53,25 +53,17 @@ lda_model = gensim.models.LdaModel(bow_corpus, num_topics=10, id2word=dictionary
 # for idx, topic in lda_model_tfidf.print_topics(-1):
 #     print('Topic: {} Word: {}'.format(idx, topic))
 
-# Testing ABC News LDA model on video transcript
-VIDEO_ID = '7AxO7Cg29mU'
+# Persisting the model
+from tempfile import mkdtemp
+savedir = mkdtemp()
+import os
+filename = os.path.join(savedir, 'ldamodel.joblib')
 
-def retrieve_transcript(video_id):
-    output = YouTubeTranscriptApi.get_transcript(video_id)
-    segments = []
-    for e in output:
-        line = e['text']
-        line = line.replace('\n', '')
-        line = line.replace('>', '')
-        line = line.replace('--', '')
-        line = line.replace('♪', '')
-        segments.append(line)
+import joblib
+joblib.dump(lda_model, filename)
 
-    transcript = " ".join(segments)
-    return transcript
+print('Model trained and saved successfully')
 
-bow_vector = dictionary.doc2bow(preprocess(retrieve_transcript(VIDEO_ID)))
 
-for index, score in sorted(lda_model[bow_vector], key=lambda tup: -1 * tup[1]):
-    print("Score: {}\t Topic: {}".format(score, lda_model.print_topic(index, 5)))
+
 
