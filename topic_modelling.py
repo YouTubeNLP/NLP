@@ -1,7 +1,3 @@
-import gensim
-from nltk.stem import WordNetLemmatizer, SnowballStemmer
-import numpy as np
-import nltk
 from service.topic_modelling.topic_modelling_helper import lemmatize_stemming, preprocess
 from service.transcript.transcript_helper import get_transcript
 from model import filename, dictionary
