@@ -13,7 +13,6 @@ from service.segmentation.segmentation_helper import nltk_segmentation, deepseg_
 
 # main method
 if __name__=="__main__":
-    
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--id", type = str, default = '4ZNWYqDU948',
                 help = "Video ID for YouTube video.")
