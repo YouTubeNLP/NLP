@@ -1,31 +1,14 @@
 import pandas as pd
 import gensim
-from nltk.stem import WordNetLemmatizer, SnowballStemmer
 import numpy as np
 np.random.seed(2018)
-import nltk
-from youtube_transcript_api import YouTubeTranscriptApi
+from service.topic_modelling.topic_modelling_helper import preprocess
 
 # Preprocessing for ABC News Dataset
 data = pd.read_csv('abcnews-date-text.csv', error_bad_lines=False);
 data_text = data[['headline_text']]
 data_text['index'] = data_text.index
 documents = data_text
-
-
-def lemmatize_stemming(text):
-    lemmatizer = WordNetLemmatizer()
-    stemmer = SnowballStemmer("english")
-    token = lemmatizer.lemmatize(text, pos='v')
-    stem_token = stemmer.stem(token)
-    return stem_token
-
-def preprocess(text):
-    result = []
-    for token in gensim.utils.simple_preprocess(text):
-        if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
-            result.append(lemmatize_stemming(token))
-    return result
 
 processed_docs = documents['headline_text'].map(preprocess)
 
