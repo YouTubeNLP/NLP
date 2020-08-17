@@ -1,0 +1,4 @@
+youtube_transcript_api==0.3.1
+ner_d==0.3.0
+spacy==2.2.2
+nerd==1.0.0
