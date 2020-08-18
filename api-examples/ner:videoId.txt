@@ -1,0 +1,23 @@
+{
+  "person": [
+    "shahquille brewster",
+    "biden",
+    "trump",
+    "harris"
+  ],
+  "org": [
+  	"dnc",
+  	"nbc news",
+  	"wall street journal"
+  ],
+  "place": [
+    "delaware",
+    "oakland"
+  ],
+  "event": [],
+  "time": [
+    "tomorrow",
+    "this week",
+    "last week"
+  ]
+}

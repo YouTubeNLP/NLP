@@ -10,10 +10,9 @@ Created on Mon Jun 15 11:24:01 2020
 from youtube_transcript_api import YouTubeTranscriptApi
 import nltk
 import argparse
-from deepsegment import DeepSegment
-from deepsegment import finetune, train, generate_data
+# from deepsegment import DeepSegment
+# from deepsegment import finetune, train, generate_data
 import spacy
-import en_core_web_sm
 
 
 # function to get lines
@@ -67,14 +66,17 @@ def nltk_segmentation(document):
 
 
 # function to segment sentences using classic deep segment model
+"""
 def deepseg_segmentation(document):
     segmenter = DeepSegment('en')
     seg_transcript = segmenter.segment(document)
     return seg_transcript
+"""
 
 
-# INCOMPLETE - REQUIRES MANUAL DATA LABELLING
+# TODO - REQUIRES MANUAL DATA LABELLING
 # function to segment sentences using finetuned deep segment
+"""
 def deepseg_segmentation_finetuned(document):    
     # download sample data
     lines = []
@@ -98,11 +100,12 @@ def deepseg_segmentation_finetuned(document):
 
     seg_transcript = segmenter.segment_long(sent = document)
     return seg_transcript 
+"""
 
 
 # function to segment sentences using nltk library
 def spacy_segmentation(document):
-    nlp = en_core_web_sm.load()
+    nlp = spacy.load('en_core_web_lg')
     doc = nlp(document)
     seg_transcript = []
     for sent in doc.sents:
@@ -123,9 +126,9 @@ def save_file(document_name, transcript):
 if __name__=="__main__":
     
     ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--id", type = str, default = '4ZNWYqDU948',
+    ap.add_argument("-i", "--id", type = str, default = 'H4opOnCXJ28',
                 help = "Video ID for YouTube video.")
-    ap.add_argument("-f", "--file", type = str, default = 'transcript.txt',
+    ap.add_argument("-f", "--file", type = str, default = 'transcript',
                 help = "File to output transcript lines to.")
     args = vars(ap.parse_args())
 
@@ -133,11 +136,11 @@ if __name__=="__main__":
     video_transcript = get_transcript(video_id)
     
     video_segments_nltk = nltk_segmentation(video_transcript)
-    video_segments_deepseg = deepseg_segmentation(video_transcript)
+    # video_segments_deepseg = deepseg_segmentation(video_transcript)
     # video_segments_deepseg_finetuned = deepseg_segmentation_finetuned(video_transcript)
     video_segments_spacy = spacy_segmentation(video_transcript)
 
     save_file('nltk', video_segments_nltk)
-    save_file('deepseg', video_segments_deepseg)
+    # save_file('deepseg', video_segments_deepseg)
     save_file('spacy', video_segments_spacy)
 

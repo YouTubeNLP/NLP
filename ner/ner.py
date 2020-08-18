@@ -10,6 +10,7 @@ Created on Thu Jun 25 18:40:12 2020
 from youtube_transcript_api import YouTubeTranscriptApi
 import argparse
 import spacy
+from spacy import displacy
 from nerd import ner
       
 
@@ -37,7 +38,7 @@ def get_transcript(video_id):
 
 # function to apply ner using spacy library
 def spacy_ner(document):
-    nlp = spacy.load("en_core_web_sm") 
+    nlp = spacy.load('en_core_web_lg') 
     doc = nlp(document)
     results = [(ent.text, ent.label_) for ent in doc.ents]
     return results
@@ -45,7 +46,7 @@ def spacy_ner(document):
 
 # function to apply ner using nerd library
 def nerd_ner(document):
-    doc = ner.name(document, language='en_core_web_sm')
+    doc = ner.name(document, language='en_core_web_lg')
     results = [(ent.text, ent.label_) for ent in doc]
     return results
 
@@ -62,14 +63,15 @@ def save_file(document_name, transcript):
 if __name__=="__main__":
     
     ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--id", type = str, default = '4ZNWYqDU948',
+    ap.add_argument("-i", "--id", type = str, default = 'H4opOnCXJ28',
                 help = "Video ID for YouTube video.")
-    ap.add_argument("-f", "--file", type = str, default = 'transcript.txt',
+    ap.add_argument("-f", "--file", type = str, default = 'ner.txt',
                 help = "File to output NER results to.")
     args = vars(ap.parse_args())
 
     video_id = args['id']
     video_transcript = get_transcript(video_id)
+    video_transcript = video_transcript.lower()
     
     ner_spacy = spacy_ner(video_transcript)
     ner_nerd = nerd_ner(video_transcript)
