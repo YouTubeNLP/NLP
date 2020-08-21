@@ -1,0 +1,162 @@
+[
+  {
+    "name": "going",
+    "frequency": 4
+  },
+  {
+    "name": "engage",
+    "frequency": 4
+  },
+  {
+    "name": "week",
+    "frequency": 3
+  },
+  {
+    "name": "let",
+    "frequency": 3
+  },
+  {
+    "name": "vice",
+    "frequency": 3
+  },
+  {
+    "name": "president",
+    "frequency": 3
+  },
+  {
+    "name": "look",
+    "frequency": 3
+  },
+  {
+    "name": "issues",
+    "frequency": 3
+  },
+  {
+    "name": "senator",
+    "frequency": 3
+  },
+  {
+    "name": "harris",
+    "frequency": 3
+  },
+  {
+    "name": "kind",
+    "frequency": 2
+  },
+  {
+    "name": "national",
+    "frequency": 2
+  },
+  {
+    "name": "poll",
+    "frequency": 2
+  },
+  {
+    "name": "numbers",
+    "frequency": 2
+  },
+  {
+    "name": "news",
+    "frequency": 2
+  },
+  {
+    "name": "biden",
+    "frequency": 2
+  },
+  {
+    "name": "lead",
+    "frequency": 2
+  },
+  {
+    "name": "see",
+    "frequency": 2
+  },
+  {
+    "name": "got",
+    "frequency": 2
+  },
+  {
+    "name": "voters",
+    "frequency": 2
+  },
+  {
+    "name": "despite",
+    "frequency": 2
+  },
+  {
+    "name": "somehow",
+    "frequency": 2
+  },
+  {
+    "name": "question",
+    "frequency": 2
+  },
+  {
+    "name": "morning",
+    "frequency": 2
+  },
+  {
+    "name": "gear",
+    "frequency": 1
+  },
+  {
+    "name": "tomorrow",
+    "frequency": 1
+  },
+  {
+    "name": "dnc",
+    "frequency": 1
+  },
+  {
+    "name": "kick",
+    "frequency": 1
+  },
+  {
+    "name": "shahquille",
+    "frequency": 1
+  },
+  {
+    "name": "brewster",
+    "frequency": 1
+  },
+  {
+    "name": "joins",
+    "frequency": 1
+  },
+  {
+    "name": "us",
+    "frequency": 1
+  },
+  {
+    "name": "fro",
+    "frequency": 1
+  },
+  {
+    "name": "delaware",
+    "frequency": 1
+  },
+  {
+    "name": "giving",
+    "frequency": 1
+  },
+  {
+    "name": "speeches",
+    "frequency": 1
+  },
+  {
+    "name": "boost",
+    "frequency": 1
+  },
+  {
+    "name": "get",
+    "frequency": 1
+  },
+  {
+    "name": "thg",
+    "frequency": 1
+  },
+  {
+    "name": "well",
+    "frequency": 1
+  }
+]
