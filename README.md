@@ -14,6 +14,8 @@ python ner.py -i <youtube-video-id>
 
 ## To Do list : ##
 
+Phase 1:
+
 - [ ] Aggregate sentiment analysis 
 - [x] Sentiment analysis sentences 
 - [x] Most engaged comments - measure using likes & replies 
@@ -23,4 +25,8 @@ python ner.py -i <youtube-video-id>
 - [ ] LDA for Topic Modelling
 - [x] Word Cloud 
 
+Phase 2: 
+
+- [ ] Adjective Aggregation
+- [ ] Recommendation follower
 
