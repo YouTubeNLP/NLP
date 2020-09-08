@@ -10,3 +10,17 @@ python segmentation.py -i <youtube-video-id> -f <output-file-name-without-txt-ex
 ``` 
 python ner.py -i <youtube-video-id>
 ``` 
+
+
+## To Do list : ##
+
+- [ ] Aggregate sentiment analysis 
+- [x] Sentiment analysis sentences 
+- [x] Most engaged comments - measure using likes & replies 
+- [ ] Emotion analysis score - torchmoji and GPT3
+- [ ] Named entity recognition from video - Add scripts using BERT and GPT3
+- [ ] NER for targed Entity 
+- [ ] LDA for Topic Modelling
+- [x] Word Cloud 
+
+
