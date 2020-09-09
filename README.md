@@ -22,7 +22,7 @@ Phase 1:
 - [ ] Emotion analysis score - torchmoji and GPT3
 - [ ] Named entity recognition from video - Add scripts using BERT and GPT3
 - [ ] NER for targed Entity 
-- [ ] LDA for Topic Modelling
+- [ ] LDA for Topic Modelling, also provide faster alternatives to LDA: compact BERT model + GPT3
 - [x] Word Cloud 
 
 Phase 2: 
