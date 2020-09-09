@@ -27,6 +27,6 @@ Phase 1:
 
 Phase 2: 
 
-- [ ] Adjective Aggregation
-- [ ] Recommendation follower
+- [ ] Adjective Aggregation: Run NER, aggregated adjectives using POS tagging for each sentence named entity appears in. -> Coref resolution might be necessary to get good results, especially for comments
+- [ ] Recommendation follower-> Give the social researcher the ability to specifiy a depth and branching factor (use @shahjaidev 's script (version that persists session when making scraping requests): https://github.com/shahjaidev/NLP_Radicalization_detection/blob/master/smart_autoplay_sequence_%20session.py 
 
